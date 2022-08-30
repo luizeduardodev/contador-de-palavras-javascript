@@ -3,7 +3,7 @@ const btnClear = document.getElementById("btn-clear");
 
 const countdown = () => {
     const showCount = document.getElementById("count-down");
-    let counter = 5;
+    let counter = 3;
 
     const interval = setInterval(() => {
         if (counter < 0) {
@@ -13,13 +13,13 @@ const countdown = () => {
         } else {
             showCount.innerText = `Tempo para a mensagem ser excluída: ${counter--}`;
         }
-    }, 800);
+    }, 700);
 };
 
 const timeToErase = (result) => {
     setTimeout(() => {
         result.innerText = "";
-    }, 5000);
+    }, 3000);
 };
 
 document.addEventListener("keypress", (event) => {
