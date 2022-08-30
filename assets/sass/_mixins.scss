@@ -1,0 +1,21 @@
+@use "./variables";
+
+@mixin displayFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin configP {
+    max-width: 50rem;
+    min-height: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: variables.$text-color;
+}
+
+@mixin md($width: 0) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}

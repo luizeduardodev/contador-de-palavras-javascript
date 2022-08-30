@@ -1,0 +1,122 @@
+@use "./mixins";
+@use "./variables";
+
+.home-section {
+    width: 100%;
+
+    background-color: variables.$bg-color-section;
+
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        max-width: 98rem;
+        margin: 0 auto;
+
+        @include mixins.displayFlex;
+
+        .container {
+            width: 60%;
+
+            @include mixins.displayFlex;
+            flex-direction: column;
+            gap: 2rem;
+            border-radius: 1rem;
+
+            background-color: variables.$bg-color-container;
+
+            @include mixins.md(768px) {
+                width: 80%;
+            }
+
+            @include mixins.md(425px) {
+                width: 90%;
+            }
+
+            .header {
+                margin-top: 2rem;
+
+                h1 {
+                    font-size: 3rem;
+
+                    color: variables.$text-color;
+
+                    @include mixins.md(425px) {
+                        font-size: 2.5rem;
+                    }
+
+                    @include mixins.md(375px) {
+                        font-size: 2.3rem;
+                    }
+                }
+            }
+
+            .word-counter {
+                width: 65%;
+                height: 17rem;
+
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                outline: none;
+                resize: none;
+
+                @include mixins.md(425px) {
+                    width: 80%;
+                    height: 16rem;
+                }
+
+                @include mixins.md(375px) {
+                    width: 85%;
+                    height: 15rem;
+                }
+
+                @include mixins.md(320px) {
+                    width: 90%;
+                    height: 14rem;
+                }
+            }
+
+            .btn-container {
+                @include mixins.displayFlex;
+                gap: 2rem;
+
+                @include mixins.md(425px) {
+                    gap: 1.5rem;
+                }
+
+                .btn {
+                    padding: 0.5rem 2rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid #363636;
+
+                    cursor: pointer;
+                    transition: 0.3s;
+                    background-color: variables.$bg-color-button;
+                    color: #fff;
+
+                    &:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+
+                    @include mixins.md(320px) {
+                        padding: 0.5rem 1.5rem;
+                    }
+                }
+            }
+
+            .result {
+                @include mixins.configP;
+            }
+
+            .count-down {
+                @include mixins.configP;
+                margin-bottom: 2rem;
+
+                @include mixins.md(320px) {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
