@@ -60,7 +60,7 @@ btnCalculate.addEventListener("click", () => {
     const calculationResult = document.getElementById("result");
 
     const stringTextValue = convertToString(textValue); //deixando o valor em formato de String;
-    const wordArray = stringTextValue.split(" "); //Retornando um array com a quantidade de palavras;
+    const wordArray = stringTextValue.trim().split(" "); //Retornando um array com a quantidade de palavras;
 
     conditionResult(wordArray, calculationResult, textValue);
 });
